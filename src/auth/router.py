@@ -8,7 +8,6 @@ from src.auth.utils import (
     get_refresh_token,
     validate_access_token,
     update_tokens,
-    db
 )
 
 router = APIRouter(

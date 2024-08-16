@@ -14,7 +14,7 @@ db = {}
 def verify_password(email: str, password: str):
     try:
         conn = ldap.initialize(settings.LDAP_SERVER)
-        conn.simple_bind_s(f"cn={email},{settings.BASE_DN}", password)
+        conn.simple_bind_s(email, password)
     except ldap.SERVER_DOWN as e:
         print(f"Error: {e}")
         return False
@@ -69,7 +69,7 @@ def validate_access_token(token: str) -> bool:
         return True
 
     except jwt.ExpiredSignatureError as e:
-        return False
+        #return False
         raise HTTPException(status_code=401, detail='Expired token') from e
 
     except jwt.InvalidSignatureError as e:

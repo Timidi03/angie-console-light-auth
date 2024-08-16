@@ -16,6 +16,13 @@ class Settings:
     BASE_DN = os.getenv('BASE_DN')
     GROUP_DN = os.getenv('GROUP_DN')
 
+    REDIS_HOST = os.getenv('REDIS_HOST')
+    REDIS_PORT = os.getenv('REDIS_PORT')
+
+    SERVER_HOST = os.getenv('SERVER_HOST')
+    SERVER_PORT = os.getenv('SERVER_PORT')
+    ORIGINS = os.getenv('ORIGINS')
+
 
 settings = Settings()
 
